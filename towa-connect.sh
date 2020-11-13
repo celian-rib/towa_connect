@@ -1,10 +1,10 @@
 #! /bin/bash
 
-iutuser='criboulet'
+iutuser='IUTUSERNAME_TOCHANGE'
 
-#Dossier contenant les classes principales
+#Dossier contenant les classes principales dans le projet netbeans (A MODIFIER)
 towaScriptsSrc='/mnt/c/Users/celia/Documents/NetBeansProjects/Towa/src/towa' 
-#Dossier contenant les tests
+#Dossier contenant les tests dans le projet netbeans (A MODIFIER)
 towaTestsSrc='/mnt/c/Users/celia/Documents/NetBeansProjects/Towa/test/towa'
 
 clear
