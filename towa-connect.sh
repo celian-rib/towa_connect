@@ -1,6 +1,7 @@
 #! /bin/bash
 
-iutuser='IUTUSERNAME_TOCHANGE'
+# (A MODIFIER)
+iutuser='IUTUSERNAME_TOCHANGE' 
 
 #Dossier contenant les classes principales dans le projet netbeans (A MODIFIER)
 towaScriptsSrc='/mnt/c/Users/celia/Documents/NetBeansProjects/Towa/src/towa' 
