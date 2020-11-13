@@ -1,4 +1,4 @@
-# towa_connect
+# TOWA Connect (Automatisation)
 > Riboulet Célian
 
 ### Installer (sur linux) :
