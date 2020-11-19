@@ -7,11 +7,7 @@
 ### Modifier pour faire fonctionner :
 - Ouvrir towa-connect.sh avec un editeur de code
 - Modifier le nom d'utilisateur (Mettre celui de l'IUT)
-- Modifer le chemin accedant au repertoire des classes principales netbeans
-- Modifer le chemin accedant au repertoire des classes de test netbeans
-
-### Ce qui se passe :
-Tout les fichiers .java sont réunis dans un seul dossier, ensuite le dossier depot est vidé (via ssh) pour que le nouveau dossier puisse etre déposé (avec rsync)
+- Modifer le chemin accedant au repertoire du projet netbean
 
 ### Utilisation :
 - Lancer le script towa-connect.sh
