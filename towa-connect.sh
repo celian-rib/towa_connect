@@ -1,15 +1,6 @@
 #! /bin/bash
 
-#ELEMENTS A MODIFIER
-#============================================================================
-
-#Nom d'utilisateur de l'iut a changer (exemple : criboulet)
-iutuser='USERNAME'
-
-#Dossier source du projet a changer pour votre configuration:
-mainPath='/mnt/c/Users/nomutilisateur/Documents/NetBeansProjects/Towa';
-
-#============================================================================
+source config.sh
 
 towaScriptsSrc="${mainPath}/src/towa" 
 towaTestsSrc="${mainPath}/test/towa"
