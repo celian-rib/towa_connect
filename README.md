@@ -15,7 +15,7 @@
 
 ### Utilisation :
 - Lancer le script towa-connect.sh ```bash towa-connect.sh```
-- Votre mot de passe vous sera deméndé plusieurs fois, il existe une solution pour ça ...
+- Votre mot de passe vous sera demandé plusieurs fois, il existe une solution pour ça ...
 - Attendre que le script récupère le fichier sortie.log
 
 ### Comment faire pour ne pas entrer son mot de passe plusieurs fois :
