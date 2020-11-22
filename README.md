@@ -1,5 +1,5 @@
 # TOWA Connect (Automatisation)
-> Riboulet Célian
+> Riboulet Célian, Tomm Jobit
 
 ### Installer (sur linux) :
 ``` git clone https://github.com/celian-rib/towa_connect.git ```
