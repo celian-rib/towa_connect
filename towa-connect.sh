@@ -61,7 +61,7 @@ rsync -r $iutuser@info-ssh1.iut.u-bordeaux.fr:~/iut-remise/towa/info_s1/$iutuser
 echo
 echo -en "\e[37m"
 
-if grep -q validé sortie.log
+if tail -n 1 sortie.log | grep -q validé 
 then 
   echo -e "\e[36m";
   grep validé sortie.log
