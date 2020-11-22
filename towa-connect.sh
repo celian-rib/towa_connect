@@ -60,4 +60,11 @@ rsync -r $iutuser@info-ssh1.iut.u-bordeaux.fr:~/iut-remise/towa/info_s1/$iutuser
 
 echo
 echo -en "\e[37m"
-cat sortie.log
+
+if grep -q validé sortie.log
+then 
+  echo -e "\e[36m";
+  grep validé sortie.log
+else
+  cat sortie.log 
+fi
