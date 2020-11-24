@@ -63,7 +63,7 @@ echo
 # - Attente de 20 seconde (Sleep de la honte)
 counter=0
 echo -en "\e[92mContenu en attente       : \e[33m["
-while (( $counter < 20 ))
+while (( $counter < 30 ))
 do 
   echo -ne "▄"
   sleep 0.5
