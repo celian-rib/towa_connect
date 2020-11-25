@@ -5,7 +5,7 @@
 ``` git clone https://github.com/celian-rib/towa_connect.git ```
 
 ### Modifier pour faire fonctionner :
-- Ouvrir towa-connect.sh avec un editeur de code
+- Ouvrir ```config.sh``` avec un editeur de code
 - Modifier le nom d'utilisateur (Mettre celui de l'IUT)
 - Modifer le chemin accedant au repertoire du projet netbean
 
