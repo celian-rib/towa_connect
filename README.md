@@ -2,8 +2,8 @@
 > Riboulet Célian, Tomm Jobit
 
 ### Installation linux :
-```git clone https://github.com/celian-rib/towa_connect.git```
-- Attention : Faire l'installation dans un répertoire linux et non windows si vous utilisez WSL
+- Copier le projet ```git clone https://github.com/celian-rib/towa_connect.git```
+> Attention : Faire l'installation dans un répertoire linux et non windows si vous utilisez WSL.
 
 ### Modifier pour faire fonctionner :
 - Ouvrir ```config.sh``` avec un editeur de code (Modifier aucun autre fichier).
