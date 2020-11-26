@@ -6,7 +6,7 @@
 # - Connexion au serveur pour supprimer sortie.log et le dossier towa existant.
 # - Connexion au serveur pour envoyer le dossier towa créé précedemment.
 # - Connexion au serveur pour attendre la création du fichier sortie.log
-# - Attente de 20 seconde (Sleep de la honte)
+# - Connexion au serveur pour attendre le remplissage du fichier sortie.log
 # - Connexion au serveur pour récuperer le fichier sortie.log
 # ======================================================================================
 
@@ -23,6 +23,8 @@ echo -en "\e[90m" # grey
 
 # Supression du dossier towa dans le cas ou il existe
 [ -d "towa" ] &&  rm -r towa 
+
+[ -f sortie.log ] &&  rm sortie.log
 
 # Creation du dossier towa puis remplissage de ce dernier
 mkdir towa
@@ -60,18 +62,25 @@ EOF
 
 echo
 
-# - Attente de 20 seconde (Sleep de la honte)
-counter=0
-echo -en "\e[92mContenu en attente       : \e[33m["
-while (( $counter < 30 ))
-do 
-  echo -ne "▄"
-  sleep 0.5
-  echo -ne "▀"
-  sleep 0.5
-  counter=$counter+1
-done
-echo "]"
+# - Connexion au serveur pour attendre le remplissage du fichier sortie.log
+ssh -R 2222:localhost:22 $iutuser@info-ssh1.iut.u-bordeaux.fr << EOF
+
+    cd ~/iut-remise/towa/info_s1/$iutuser/depot
+    
+    echo -en "\e[92mContenu en attente       : \e[33m["
+
+    NBLIGNE=\$(wc -l ~/iut-remise/towa/info_s1/$iutuser/depot/sortie.log | cut -f 1 -d " ")
+
+    while [[ \$NBLIGNE -lt 2 ]]
+    do 
+      NBLIGNE=\$(wc -l ~/iut-remise/towa/info_s1/$iutuser/depot/sortie.log | cut -f 1 -d " ")
+      echo -ne "▄"
+      sleep 0.5
+      echo -ne "▀"
+      sleep 0.5
+    done 
+    echo -ne "]"
+EOF
 
 # - Connexion au serveur pour récuperer le fichier sortie.log
 rsync -r $iutuser@info-ssh1.iut.u-bordeaux.fr:~/iut-remise/towa/info_s1/$iutuser/depot/sortie.log ./
