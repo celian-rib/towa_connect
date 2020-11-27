@@ -32,20 +32,20 @@ cp $towaScriptsSrc/*.java towa
 cp $towaTestsSrc/*.java towa
 
 # - Connexion au serveur pour supprimer sortie.log et le dossier towa existant.
-ssh -R 2222:localhost:22 $iutuser@info-ssh1.iut.u-bordeaux.fr << EOF
+ssh -R 2222:localhost:22 $iutuser@info-ssh2.iut.u-bordeaux.fr << EOF
   cd ~/iut-remise/towa/info_s1/$iutuser/depot
   rm sortie.log
   rm -r towa
 EOF
 
 # - Connexion au serveur pour envoyer le dossier towa créé précedemment.
-rsync -r ./towa $iutuser@info-ssh1.iut.u-bordeaux.fr:~/iut-remise/towa/info_s1/$iutuser/depot
+rsync -r ./towa $iutuser@info-ssh2.iut.u-bordeaux.fr:~/iut-remise/towa/info_s1/$iutuser/depot
 
 # Suppression du dossier towa en local
 rm -r towa
 
 # - Connexion au serveur pour attendre la création du fichier sortie.log
-ssh -R 2222:localhost:22 $iutuser@info-ssh1.iut.u-bordeaux.fr << EOF
+ssh -R 2222:localhost:22 $iutuser@info-ssh2.iut.u-bordeaux.fr << EOF
   
   cd ~/iut-remise/towa/info_s1/$iutuser/depot
   
@@ -63,7 +63,7 @@ EOF
 echo
 
 # - Connexion au serveur pour attendre le remplissage du fichier sortie.log
-ssh -R 2222:localhost:22 $iutuser@info-ssh1.iut.u-bordeaux.fr << EOF
+ssh -R 2222:localhost:22 $iutuser@info-ssh2.iut.u-bordeaux.fr << EOF
 
     cd ~/iut-remise/towa/info_s1/$iutuser/depot
     
@@ -83,7 +83,7 @@ ssh -R 2222:localhost:22 $iutuser@info-ssh1.iut.u-bordeaux.fr << EOF
 EOF
 
 # - Connexion au serveur pour récuperer le fichier sortie.log
-rsync -r $iutuser@info-ssh1.iut.u-bordeaux.fr:~/iut-remise/towa/info_s1/$iutuser/depot/sortie.log ./
+rsync -r $iutuser@info-ssh2.iut.u-bordeaux.fr:~/iut-remise/towa/info_s1/$iutuser/depot/sortie.log ./
 
 echo
 echo -en "\e[37m"
