@@ -58,28 +58,20 @@ ssh -R 2222:localhost:22 $iutuser@info-ssh1.iut.u-bordeaux.fr << EOF
     sleep 0.5
   done
   echo "]"
-EOF
-
-echo
-
-# - Connexion au serveur pour attendre le remplissage du fichier sortie.log
-ssh -R 2222:localhost:22 $iutuser@info-ssh1.iut.u-bordeaux.fr << EOF
-
-    cd ~/iut-remise/towa/info_s1/$iutuser/depot
     
-    echo -en "\e[92mContenu en attente       : \e[33m["
+  echo -en "\e[92mContenu en attente       : \e[33m["
 
+  NBLIGNE=\$(wc -l ~/iut-remise/towa/info_s1/$iutuser/depot/sortie.log | cut -f 1 -d " ")
+
+  while [[ \$NBLIGNE -lt 2 ]]
+  do 
     NBLIGNE=\$(wc -l ~/iut-remise/towa/info_s1/$iutuser/depot/sortie.log | cut -f 1 -d " ")
-
-    while [[ \$NBLIGNE -lt 2 ]]
-    do 
-      NBLIGNE=\$(wc -l ~/iut-remise/towa/info_s1/$iutuser/depot/sortie.log | cut -f 1 -d " ")
-      echo -ne "▄"
-      sleep 0.5
-      echo -ne "▀"
-      sleep 0.5
-    done 
-    echo -ne "]"
+    echo -ne "▄"
+    sleep 0.5
+    echo -ne "▀"
+    sleep 0.5
+  done 
+  echo -ne "]"
 EOF
 
 # - Connexion au serveur pour récuperer le fichier sortie.log
