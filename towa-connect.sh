@@ -85,6 +85,7 @@ if tail -n 1 sortie.log | grep -q validé
 then # Si le niveau est validé on n'affiche pas sortie.log
   echo -e "\e[36m";
   grep validé sortie.log
+  echo "Le serveur à réalisé $(grep fin sortie.log | wc -l) tests"
 else
   cat sortie.log 
 fi
