@@ -129,7 +129,17 @@ echo -en "\e[37m"
 
 grep joue partie2.log
 
+let nbpartie=1;
 for f in resultats/resultats_Towa*
 do
-  grep -A1 @ $f | tail -n 1
+  echo "====Partie $nbpartie============================================"
+  grep -A1 @ $f | tail -n 1 #ligne apres le @
+  echo
+  echo "Joueur n° 1"
+  grep -A5 "n° 1" $f | tail -n 3 
+  echo
+  echo "Joueur n° 2"
+  grep -A5 "n° 2" $f | tail -n 3 
+  echo
+  let nbpartie=$nbpartie+1
 done
